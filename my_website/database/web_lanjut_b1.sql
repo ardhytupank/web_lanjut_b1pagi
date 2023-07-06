@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2023 at 12:28 PM
+-- Generation Time: Jul 06, 2023 at 12:20 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -42,7 +42,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nama_mahasiswa`, `npm`, `id_prodi`, `alamat`, `simpan`, `edit`) VALUES
-(1, 'joni', 123, 3, 'Jombang', '2023-06-22 17:28:14', '2023-06-22 17:28:14');
+(1, 'joni', 123, 3, 'Jombang', '2023-06-22 17:28:14', '2023-06-22 17:28:14'),
+(2, 'fs', 12, 3, 'ad', '2023-07-06 16:36:15', '2023-07-06 16:36:15');
 
 -- --------------------------------------------------------
 
@@ -52,17 +53,18 @@ INSERT INTO `mahasiswa` (`id`, `nama_mahasiswa`, `npm`, `id_prodi`, `alamat`, `s
 
 CREATE TABLE `prodi` (
   `id` int(11) NOT NULL,
-  `nama_prodi` varchar(25) NOT NULL
+  `nama_prodi` varchar(25) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `prodi`
 --
 
-INSERT INTO `prodi` (`id`, `nama_prodi`) VALUES
-(3, 'Sains Data'),
-(1, 'Sistem Informasi'),
-(2, 'Teknik Informasi');
+INSERT INTO `prodi` (`id`, `nama_prodi`, `created`, `updated`) VALUES
+(5, 'Sistem Informasi', '2023-07-06 17:18:54', '2023-07-06 17:18:54'),
+(6, 'Teknik Informasi', '2023-07-06 17:19:26', '2023-07-06 17:19:26');
 
 --
 -- Indexes for dumped tables
@@ -90,13 +92,13 @@ ALTER TABLE `prodi`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
