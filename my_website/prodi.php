@@ -1,3 +1,5 @@
+<?php require "controllers/functions.php"; ?>
+
 <h2>Ini adalah Halaman Program Studi</h2>
 
 <div class="row">
@@ -12,7 +14,44 @@
     </div>
 </div>
 
+<div class="table-responsive">
+    <table class="table table-primary table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>ID Prodi</th>
+                <th>Nama Prodi</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $no = 1;
+            foreach(prodi() as $p) :
+            ?>
+            <tr>
+                <td><?= $no++ ?></td>
+                <td><?= $p["id"] ?></td>
+                <td><?= $p["nama_prodi"] ?></td>
+                <td><?= $p["created"] ?></td>
+                <td><?= $p["updated"] ?></td>
+                <td>
+                    <button class="btn btn-success btn-sm">Edit</button>
+                    <button class="btn btn-danger btn-sm hapus-prodi" atrr_id_prodi="<?= $p["id"] ?>">Hapus</button>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
 <script>
+    $(".hapus_prodi").click(function(){
+        
+    })
+
     $("#simpan_prodi").click(function(){
         //ini adalah variabel yang value nya diambil dari id nama_prodi
         var nama_prodi = $("#nama_prodi").val()
