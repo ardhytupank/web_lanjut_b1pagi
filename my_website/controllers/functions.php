@@ -21,3 +21,11 @@ function q($data){
 function prodi(){
     return q("SELECT * FROM prodi");
 }
+
+function prodi_satu($id_prodi,$isi_tabel)
+{
+    $x = mysqli_fetch_assoc(
+        q("SELECT * FROM prodi WHERE id = '$id_prodi'")
+    );
+    return $x[$isi_tabel];
+}
